@@ -43,6 +43,7 @@ fi
 
 export SOURCE_TARGET
 export BOOT_TARGET
+export KERNEL_RELEASE
 
 # E Option carries over environment variables
 sudo -E ./scripts/copyImage.sh

@@ -3,8 +3,8 @@
 apt-add-repository universe
 apt-get update
 apt-get install pkg-config -y
-# We use 'make gconfig' to edit the .config file
-apt-get install libgtk2.0-dev libglib2.0-dev libglade2-dev
+# We use 'make menuconfig' to edit the .config file; install dependencies
+apt-get install libncurses5-dev
 echo "Installing kernel sources in: ""$SOURCE_TARGET"
 if [ ! -d "$SOURCE_TARGET" ]; then
    # Target directory does not exist; create
