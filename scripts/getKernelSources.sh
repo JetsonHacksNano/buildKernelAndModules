@@ -14,7 +14,7 @@ fi
 
 cd "$SOURCE_TARGET"
 echo "$PWD"
-exit
+
 wget -N https://developer.nvidia.com/embedded/dlc/l4t-sources-32-1-jetson-nano
 # l4t-sources is a tbz2 file
 tar -xvf l4t-sources-32-1-jetson-nano public_sources/kernel_src.tbz2
