@@ -15,12 +15,17 @@ echo "Jetson Model: "$JETSON_BOARD
 
 JETSON_L4T=""
 
+# Starting with L4T 32.2, the recommended way to find the L4T Release Number
+# is to use dpkg
 function check_L4T_version()
-{
-	JETSON_L4T_STRING=$(head -n 1 /etc/nv_tegra_release)
+{   
+        if [ -f /etc/nv_tegra_release ]; then
+		JETSON_L4T_STRING=$(head -n 1 /etc/nv_tegra_release)
+		JETSON_L4T_RELEASE=$(echo $JETSON_L4T_STRING | cut -f 2 -d ' ' | grep -Po '(?<=R)[^;]+')
+		JETSON_L4T_REVISION=$(echo $JETSON_L4T_STRING | cut -f 2 -d ',' | grep -Po '(?<=REVISION: )[^;]+')
 
-	if [ -z $2 ]; then
-		echo "$LOG Instead, reading L4T version from \"dpkg-query --show nvidia-l4t-core\""
+	else
+		echo "$LOG Reading L4T version from \"dpkg-query --show nvidia-l4t-core\""
 
 		JETSON_L4T_STRING=$(dpkg-query --showformat='${Version}' --show nvidia-l4t-core)
 		local JETSON_L4T_ARRAY=(${JETSON_L4T_STRING//./ })	
@@ -30,11 +35,6 @@ function check_L4T_version()
 
 		JETSON_L4T_RELEASE=${JETSON_L4T_ARRAY[0]}
 		JETSON_L4T_REVISION=${JETSON_L4T_ARRAY[1]}
-	else
-		echo "$LOG reading L4T version from /etc/nv_tegra_release"
-
-		JETSON_L4T_RELEASE=$(echo $JETSON_L4T_STRING | cut -f 2 -d ' ' | grep -Po '(?<=R)[^;]+')
-		JETSON_L4T_REVISION=$(echo $JETSON_L4T_STRING | cut -f 2 -d ',' | grep -Po '(?<=REVISION: )[^;]+')
 	fi
 
 	JETSON_L4T_VERSION="$JETSON_L4T_RELEASE.$JETSON_L4T_REVISION"
@@ -44,9 +44,8 @@ function check_L4T_version()
 
 echo "Getting L4T Version"
 check_L4T_version
-JETSON_L4T="$JETSON_L4T_RELEASE.$JETSON_L4T_REVISION"
+JETSON_L4T="$JETSON_L4T_VERSION"
 echo "Jetson_L4T="$JETSON_L4T
-unset JETSON_L4T_STRING
 
 function usage
 {
