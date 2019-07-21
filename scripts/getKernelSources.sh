@@ -32,8 +32,6 @@ KERNEL_VERSION=$(uname -r)
 # Everything after '4.9.140' is the local version
 # This removes the suffix
 LOCAL_VERSION=${KERNEL_VERSION#$"4.9.140"}
-# FIX ME
-LOCAL_VERSION="-jetsonbot"
 # Should be "-tegra"
 bash scripts/config --file .config \
 	--set-str LOCALVERSION $LOCAL_VERSION
