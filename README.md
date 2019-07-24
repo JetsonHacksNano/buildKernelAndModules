@@ -58,6 +58,9 @@ $ command 2>&1 | tee log.txt
 
 so you can go back and catch errors.
 
+<h4>Intended Use</h4>
+The intended use of this repository is to help automate building known configurations of the kernel and build modules. You should use the kernel-4.9/scripts/config script to set the kernel configuration that you desire. See the 'rootOnUSB' repository on the JetsonHacksNano Github account for an example.
+
 ### Release Notes
 July, 2019
 * vL4T32.2
