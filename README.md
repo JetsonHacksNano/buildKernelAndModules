@@ -32,7 +32,6 @@ Copies the Image file created by compiling the kernel to the /boot directory. No
 
 You will want to make a copy of the original Image before the copy, something like:
 
-# Put a copy of the current Image here
 $ cp /boot/Image $INSTALL_DIR/Image.orig<br>
 $ ./copyImage.sh<br>
 $ echo "New Image created and placed in /boot"<br>
