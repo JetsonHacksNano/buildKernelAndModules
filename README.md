@@ -64,7 +64,8 @@ The intended use of this repository is to help automate building known configura
 July, 2019
 * vL4T32.2
 * L4T 32.2 (JetPack 4.2.1)
+
+June, 2019
+* vL4T32.1
+* L4T 32.1 (JetPack 4.2)
 * Initial Release 
-
-
-command 2>&1 | tee log.txt
