@@ -8,7 +8,6 @@ echo "Source Target: "$SOURCE_TARGET
 MAKE_DIRECTORY="$SOURCE_TARGET"kernel/kernel-4.9
 
 cd "$SOURCE_TARGET"kernel/kernel-4.9
-make modules_prepare
 # Get the number of CPUs 
 NUM_CPU=$(nproc)
 

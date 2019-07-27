@@ -3,31 +3,49 @@
 # Copyright (c) 2016-19 Jetsonhacks 
 # MIT License
 
-JETSON_MODEL="jetson-nano"
-L4T_TARGET="32.1.0"
+JETSON_MODEL="NVIDIA Jetson Nano Developer Kit"
+L4T_TARGET="32.2"
 SOURCE_TARGET="/usr/src"
 KERNEL_RELEASE="4.9"
 
 # < is more efficient than cat command
 # NULL byte at end of board description gets bash upset; strip it out
 JETSON_BOARD=$(tr -d '\0' </proc/device-tree/model)
+echo "Jetson Model: "$JETSON_BOARD
 
 JETSON_L4T=""
-if [ -f /etc/nv_tegra_release ]; then
-    # L4T string
-    JETSON_L4T_STRING=$(head -n 1 /etc/nv_tegra_release)
 
-    # Load release and revision
-    JETSON_L4T_RELEASE=$(echo $JETSON_L4T_STRING | cut -f 1 -d ',' | sed 's/\# R//g' | cut -d ' ' -f1)
-    JETSON_L4T_REVISION=$(echo $JETSON_L4T_STRING | cut -f 2 -d ',' | sed 's/\ REVISION: //g' )
-    # unset variable
-    unset JETSON_L4T_STRING
-    
-    # Write Jetson description
-    JETSON_L4T="$JETSON_L4T_RELEASE.$JETSON_L4T_REVISION"
-fi
-echo "Jetson Model: "$JETSON_BOARD
-echo "Jetson L4T: "$JETSON_L4T
+# Starting with L4T 32.2, the recommended way to find the L4T Release Number
+# is to use dpkg
+function check_L4T_version()
+{   
+        if [ -f /etc/nv_tegra_release ]; then
+		JETSON_L4T_STRING=$(head -n 1 /etc/nv_tegra_release)
+		JETSON_L4T_RELEASE=$(echo $JETSON_L4T_STRING | cut -f 2 -d ' ' | grep -Po '(?<=R)[^;]+')
+		JETSON_L4T_REVISION=$(echo $JETSON_L4T_STRING | cut -f 2 -d ',' | grep -Po '(?<=REVISION: )[^;]+')
+
+	else
+		echo "$LOG Reading L4T version from \"dpkg-query --show nvidia-l4t-core\""
+
+		JETSON_L4T_STRING=$(dpkg-query --showformat='${Version}' --show nvidia-l4t-core)
+		local JETSON_L4T_ARRAY=(${JETSON_L4T_STRING//./ })	
+
+		#echo ${JETSON_L4T_ARRAY[@]}
+		#echo ${#JETSON_L4T_ARRAY[@]}
+
+		JETSON_L4T_RELEASE=${JETSON_L4T_ARRAY[0]}
+		JETSON_L4T_REVISION=${JETSON_L4T_ARRAY[1]}
+	fi
+
+	JETSON_L4T_VERSION="$JETSON_L4T_RELEASE.$JETSON_L4T_REVISION"
+	echo "$LOG Jetson BSP Version:  L4T R$JETSON_L4T_VERSION"
+
+}
+
+echo "Getting L4T Version"
+check_L4T_version
+JETSON_L4T="$JETSON_L4T_VERSION"
+echo "Jetson_L4T="$JETSON_L4T
 
 function usage
 {
