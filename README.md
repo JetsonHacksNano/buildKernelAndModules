@@ -22,7 +22,7 @@ Compiles the kernel using make. The script commands make the kernel Image file. 
 
 The other parts of the kernel build, such as building the device tree, require that the result be 'signed' and flashed from the the NVIDIA tools on a host PC.
 
-<strong>makeKernel.sh</strong>
+<strong>makeModules.sh</strong>
 
 Compiles the modules using make and then installs them.
 
