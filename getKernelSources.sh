@@ -4,7 +4,7 @@
 # MIT License
 
 JETSON_MODEL="NVIDIA Jetson Nano Developer Kit"
-L4T_TARGET="32.2"
+L4T_TARGET="32.2.1"
 SOURCE_TARGET="/usr/src"
 KERNEL_RELEASE="4.9"
 
@@ -28,16 +28,12 @@ function check_L4T_version()
 		echo "$LOG Reading L4T version from \"dpkg-query --show nvidia-l4t-core\""
 
 		JETSON_L4T_STRING=$(dpkg-query --showformat='${Version}' --show nvidia-l4t-core)
-		local JETSON_L4T_ARRAY=(${JETSON_L4T_STRING//./ })	
-
-		#echo ${JETSON_L4T_ARRAY[@]}
-		#echo ${#JETSON_L4T_ARRAY[@]}
-
-		JETSON_L4T_RELEASE=${JETSON_L4T_ARRAY[0]}
-		JETSON_L4T_REVISION=${JETSON_L4T_ARRAY[1]}
-	fi
-
-	JETSON_L4T_VERSION="$JETSON_L4T_RELEASE.$JETSON_L4T_REVISION"
+                # For example: 32.2.1-20190812212815
+                JETSON_L4T_VERSION=$(echo $JETSON_L4T_STRING | cut -d '-' -f 1)
+                JETSON_L4T_RELEASE=$(echo $JETSON_L4T_VERSION | cut -d '.' -f 1)
+                # # operator remove prefix in string operations in bash script. Don't forget . eg "32."
+                JETSON_L4T_REVISION=${JETSON_L4T_VERSION#$JETSON_L4T_RELEASE.}
+        fi
 	echo "$LOG Jetson BSP Version:  L4T R$JETSON_L4T_VERSION"
 
 }
@@ -45,7 +41,6 @@ function check_L4T_version()
 echo "Getting L4T Version"
 check_L4T_version
 JETSON_L4T="$JETSON_L4T_VERSION"
-echo "Jetson_L4T="$JETSON_L4T
 
 function usage
 {

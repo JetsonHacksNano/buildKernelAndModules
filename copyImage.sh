@@ -21,7 +21,8 @@ while [ "$1" != "" ]; do
         -d | --directory )      shift
 				SOURCE_TARGET=$1
                                 ;;
-        -b | --boot )           BOOT_TARGET=$1
+        -b | --boot )           shift
+				BOOT_TARGET=$1
                                 ;;
         -h | --help )           usage
                                 exit

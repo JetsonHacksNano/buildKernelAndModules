@@ -15,7 +15,7 @@ fi
 cd "$SOURCE_TARGET"
 echo "$PWD"
 
-wget -N https://developer.download.nvidia.com/embedded/L4T/r32-2_Release_v1.0/Nano-TX1/public_sources.tbz2
+wget -N https://developer.nvidia.com/embedded/dlc/r32-2-1_Release_v1.0/Nano-TX1/sources/public_sources.tbz2
 # l4t-sources is a tbz2 file
 tar -xvf public_sources.tbz2 public_sources/kernel_src.tbz2
 tar -xvf public_sources/kernel_src.tbz2
