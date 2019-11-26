@@ -1,7 +1,7 @@
 # buildKernelAndModules
 Build the Linux Kernel and Modules on board the NVIDIA Jetson Nano Developer Kit
 
-These scripts are for JetPack 4.2.2, L4T 32.2.1
+These scripts are for JetPack 4.3, L4T 32.2.3
 
 Scripts to help build the 4.9.140 kernel and modules onboard the Jetson Nano Developer Kit Previous versions may be available in releases.
 
@@ -61,16 +61,21 @@ so you can go back and catch errors.
 The intended use of this repository is to help automate building known configurations of the kernel and build modules. You should use the kernel-4.9/scripts/config script to set the kernel configuration that you desire. See the 'rootOnUSB' repository on the JetsonHacksNano Github account for an example.
 
 ### Release Notes
-October, 2019
+<b>November, 2019</b>
+* vL4T32.2.3
+* L4T 32.2.3 (JetPack 4.3)
+* Minor version update
+
+<b>October, 2019</b>
 * vL4T32.2.1
 * L4T 32.2.1 (JetPack 4.2.1)
 * Better release version parsing
 
-July, 2019
+<b>July, 2019</b>
 * vL4T32.2
 * L4T 32.2 (JetPack 4.2.1)
 
-June, 2019
+<b>June, 2019</b>
 * vL4T32.1
 * L4T 32.1 (JetPack 4.2)
 * Initial Release 
