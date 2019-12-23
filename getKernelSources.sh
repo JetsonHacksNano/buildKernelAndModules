@@ -4,7 +4,7 @@
 # MIT License
 
 JETSON_MODEL="NVIDIA Jetson Nano Developer Kit"
-L4T_TARGET="32.2.1"
+L4T_TARGET="32.3.1"
 SOURCE_TARGET="/usr/src"
 KERNEL_RELEASE="4.9"
 
@@ -17,12 +17,14 @@ JETSON_L4T=""
 
 # Starting with L4T 32.2, the recommended way to find the L4T Release Number
 # is to use dpkg
+# L4T 32.3.1, NVIDIA added back /etc/nv_tegra_release
 function check_L4T_version()
 {   
         if [ -f /etc/nv_tegra_release ]; then
 		JETSON_L4T_STRING=$(head -n 1 /etc/nv_tegra_release)
 		JETSON_L4T_RELEASE=$(echo $JETSON_L4T_STRING | cut -f 2 -d ' ' | grep -Po '(?<=R)[^;]+')
 		JETSON_L4T_REVISION=$(echo $JETSON_L4T_STRING | cut -f 2 -d ',' | grep -Po '(?<=REVISION: )[^;]+')
+                JETSON_L4T_VERSION=$JETSON_L4T_RELEASE.$JETSON_L4T_REVISION
 
 	else
 		echo "$LOG Reading L4T version from \"dpkg-query --show nvidia-l4t-core\""
