@@ -1,11 +1,11 @@
 # buildKernelAndModules
 Build the Linux Kernel and Modules on board the NVIDIA Jetson Nano Developer Kit
 
-These scripts are for JetPack 4.3, L4T 32.3.1
+These scripts are for JetPack 4.5.1, L4T 32.5.1
 
 Scripts to help build the 4.9.140 kernel and modules onboard the Jetson Nano Developer Kit Previous versions may be available in releases.
 
-<em><strong>Note:</strong> The kernel source version must match the version of firmware flashed on the Jetson. For example, the source for the 4.9.140 kernel here is matched with L4T 32.3.1. This kernel compiled using this source tree may not work with newer versions or older versions of L4T</em>
+<em><strong>Note:</strong> The kernel source version must match the version of firmware flashed on the Jetson. For example, the source for the 4.9.140 kernel here is matched with L4T 32.5.1. This kernel compiled using this source tree may not work with newer versions or older versions of L4T</em>
 
 As of this writing, the "official" way to build the Jetson Nano kernel is to use a cross compiler on a Linux PC. This is an alternative which builds the kernel onboard the Jetson itself. These scripts will download the kernel source to the Jetson Nano, and then compile the kernel and selected modules. The newly compiled kernel can then be installed. We recommend a SD card size of 32GB, 64GB preferred.
 
@@ -61,6 +61,10 @@ so you can go back and catch errors.
 The intended use of this repository is to help automate building known configurations of the kernel and build modules. You should use the kernel-4.9/scripts/config script to set the kernel configuration that you desire. See the 'rootOnUSB' repository on the JetsonHacksNano Github account for an example.
 
 ### Release Notes
+<b>April, 2021</b>
+* vL4T32.5.1
+* L4T 32.5.1 (JetPack 4.5)
+
 <b>December, 2019</b>
 * vL4T32.3.1
 * L4T 32.3.1 (JetPack 4.3)

@@ -4,7 +4,7 @@
 # MIT License
 
 JETSON_MODEL="NVIDIA Jetson Nano Developer Kit"
-L4T_TARGET="32.3.1"
+L4T_TARGET="32.5.1"
 SOURCE_TARGET="/usr/src"
 KERNEL_RELEASE="4.9"
 

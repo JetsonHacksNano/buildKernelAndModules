@@ -15,7 +15,7 @@ fi
 cd "$SOURCE_TARGET"
 echo "$PWD"
 
-wget -N https://developer.nvidia.com/embedded/dlc/r32-3-1_Release_v1.0/Sources/T210/public_sources.tbz2
+wget -N https://developer.nvidia.com/embedded/l4t/r32_release_v5.1/r32_release_v5.1/sources/t210/public_sources.tbz2
 # l4t-sources is a tbz2 file
 tar -xvf public_sources.tbz2  Linux_for_Tegra/source/public/kernel_src.tbz2 --strip-components=3
 tar -xvf kernel_src.tbz2
