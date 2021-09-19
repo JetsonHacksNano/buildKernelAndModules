@@ -5,9 +5,8 @@
 
 echo "Source Target: "$SOURCE_TARGET
 
-MAKE_DIRECTORY="$SOURCE_TARGET"kernel/kernel-4.9
+cd $SOURCE_TARGET"kernel/kernel-"$KERNEL_RELEASE
 
-cd "$SOURCE_TARGET"kernel/kernel-4.9
 # Get the number of CPUs 
 NUM_CPU=$(nproc)
 
