@@ -1,4 +1,4 @@
-## jetson-linux-build
+## buildKernelAndModules
 Tools to build the Linux kernel and modules on board Jetson Developer Kits
 
 This tool is meant for intermediate+ users. Please read this entire document before proceeding.
