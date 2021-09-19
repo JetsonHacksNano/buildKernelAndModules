@@ -1,7 +1,9 @@
 ## jetson-linux-build
 Tools to build the Linux kernel and modules on board Jetson Developer Kits
 
-This is a tool for meant for intermediate+ users. Please read this entire document before proceeding.
+This tool is meant for intermediate+ users. Please read this entire document before proceeding.
+
+Supports L4T Releases 32.4.2 through 32.6.1
 
 This repository contains convenience scripts to:
 * Download Kernel and Module sources (**B**oard **S**upport **P**ackage - **BSP**) 
@@ -37,6 +39,8 @@ $ cp /boot/Image $INSTALL_DIR/Image.orig
 $ ./copyImage.sh
 $ echo "New Image created and placed in /boot"
 ```
+You may need to modify the _/boot/extlinux/extlinux.conf_ to reflect the changes. 
+
 ### editConfig.sh 
 Edit the .config file located in _**/usr/src/kernel/kernel-4.9**_ This file must be present (from the getKernelSources.sh script) before launching the file. Note that if you change the local version, you will need to make both the kernel and modules and install them.
 
@@ -82,9 +86,35 @@ One thing that the scripts are useful for is building external kernel modules. P
 ## Release Notes
 
 ### September, 2021
-* Initial Release
+* v1.0
+* Initial Release - Build 32.4.2 through 32.6.1
 * Unification of build methods across Jetson platform
   * Jetson Nano, Nano 2GB, TX1, TX2, AGX Xavier, Xavier NX
 * Associative lookup of BSP source code via L4T Release name
 * L4T Releases 32.4.2 through 32.6.1
 * Tested on Jetson Nano, Jetson Xavier NX
+
+### December, 2019
+* vL4T32.3.1
+* L4T 32.3.1 (JetPack 4.3)
+* Minor version update
+
+### November, 2019
+* vL4T32.2.3
+* L4T 32.2.3 (JetPack 4.2.2)
+* Minor version update
+
+### October, 2019
+
+* vL4T32.2.1
+* L4T 32.2.1 (JetPack 4.2.1)
+* Better release version parsing
+
+### July, 2019
+* vL4T32.2
+* L4T 32.2 (JetPack 4.2.1)
+
+### June, 2019
+* vL4T32.1
+* L4T 32.1 (JetPack 4.2)
+* Initial Release
