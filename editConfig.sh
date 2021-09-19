@@ -1,10 +1,10 @@
 #!/bin/bash
-# Edit the kernel configuration for NVIDIA Jetson Nano Developer Kit, L4T
-# Copyright (c) 2016-19 Jetsonhacks 
+# Edit the kernel configuration for NVIDIA Jetson Developer Kit
+# Copyright (c) 2016-21 Jetsonhacks 
 # MIT License
 
 SOURCE_TARGET="/usr/src"
-KERNEL_RELEASE="4.9"
+KERNEL_RELEASE=$( uname -r | cut -d. -f1-2) # e.g. 4.9
 
 function usage
 {

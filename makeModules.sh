@@ -1,10 +1,10 @@
 #!/bin/bash
-# Make kernel modules for NVIDIA Jetson Nano Developer Kit, L4T
-# Copyright (c) 2016-19 Jetsonhacks 
+# Make kernel modules for NVIDIA Jetson Developer Kit
+# Copyright (c) 2016-21 Jetsonhacks 
 # MIT License
 
 SOURCE_TARGET="/usr/src"
-KERNEL_RELEASE="4.9"
+KERNEL_RELEASE=$( uname -r | cut -d. -f1-2) # e.g. 4.9
 
 function usage
 {
@@ -47,5 +47,7 @@ if [ ! -d "$PROPOSED_SRC_PATH" ]; then
 fi
 
 export SOURCE_TARGET
+export KERNEL_RELEASE
+
 # E Option carries over environment variables
 sudo -E ./scripts/makeModules.sh
