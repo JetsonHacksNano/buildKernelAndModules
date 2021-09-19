@@ -56,7 +56,7 @@ You will need to know the module flag to use this method, in this case it is: **
 
 
 ## Background Notes
-Over the years, we have been maintaining several different repositories here and on https://github.com/jetsonhacksnano to build the Linux kernel and modules for the various NVIDIA Jetson models:
+Over the years, we have been maintaining several different repositories here and on https://github.com/jetsonhacks to build the Linux kernel and modules for the various NVIDIA Jetson models:
 
 * Jetson Nano
 * Jetson Nano 2GB
@@ -118,3 +118,9 @@ One thing that the scripts are useful for is building external kernel modules. P
 * vL4T32.1
 * L4T 32.1 (JetPack 4.2)
 * Initial Release
+
+Special thanks to Raffaello Bonghi (https://github.com/rbonghi) for jetson_easy scripts.
+
+Special thanks to Shreeyak (https://github.com/Shreeyak) for discussing alternatives to get source directly from NVIDIA git repositories.
+
+
