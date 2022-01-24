@@ -64,7 +64,7 @@ case ${BOARD_ID} in
      SOURCE_URL=${source_url_list_186[$JETSON_L4T]}
    ;;
    "t210ref" ) 
-     SOURCE_URL=${source_url_list_186[$JETSON_L4T]}
+     SOURCE_URL=${source_url_list_210[$JETSON_L4T]}
    ;;
    *)
     echo "Unrecognized board id: '$BOARD_ID'"
