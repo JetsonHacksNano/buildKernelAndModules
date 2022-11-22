@@ -6,6 +6,8 @@
 # Table of the URLs to Kernel Sources for Jetson Nano, Nano 2GB and TX1
 # L4T Driver Package [BSP] Sources - Code 210
 declare -A source_url_list_210=( 
+  ["32.7.2"]="https://developer.nvidia.com/embedded/l4t/r32_release_v7.2/sources/t210/public_sources.tbz2"
+  ["32.7.1"]="https://developer.nvidia.com/embedded/l4t/r32_release_v7.1/sources/t210/public_sources.tbz2"
   ["32.6.1"]="https://developer.nvidia.com/embedded/l4t/r32_release_v6.1/sources/t210/public_sources.tbz2"
   ["32.5.2"]="https://developer.nvidia.com/embedded/l4t/r32_release_v5.2/sources/t210/public_sources.tbz2"
   ["32.5.1"]="https://developer.nvidia.com/embedded/l4t/r32_release_v5.1/r32_release_v5.1/sources/t210/public_sources.tbz2"
@@ -14,9 +16,12 @@ declare -A source_url_list_210=(
   ["32.4.3"]="https://developer.nvidia.com/embedded/L4T/r32_Release_v4.3/Sources/T210/public_sources.tbz2"
   ["32.4.2"]="https://developer.nvidia.com/embedded/L4T/r32_Release_v4.2/Sources/T210/public_sources.tbz2" )
 
-# Table of the URLs to Kernel Sources for Jetson TX2, AGX Xavier, Xavier NX
+# Table of the URLs to Kernel Sources for Jetson TX2, AGX Xavier, Xavier NX, AGX Orin
 # L4T Driver Package [BSP] Sources - Code 186
 declare -A source_url_list_186=( 
+  ["35.1.0"]="https://developer.nvidia.com/embedded/l4t/r35_release_v1.0/release/jetson_linux_r35.1.0_aarch64.tbz2"
+  ["32.7.2"]="https://developer.nvidia.com/embedded/l4t/r32_release_v7.2/sources/t186/public_sources.tbz2"
+  ["32.7.1"]="https://developer.nvidia.com/embedded/l4t/r32_release_v7.1/sources/t186/public_sources.tbz2"
   ["32.6.1"]="https://developer.nvidia.com/embedded/l4t/r32_release_v6.1/sources/t186/public_sources.tbz2"
   ["32.5.2"]="https://developer.nvidia.com/embedded/l4t/r32_release_v5.2/sources/t186/public_sources.tbz2"
   ["32.5.1"]="https://developer.nvidia.com/embedded/l4t/r32_release_v5.1/r32_release_v5.1/sources/t186/public_sources.tbz2"
@@ -64,7 +69,7 @@ case ${BOARD_ID} in
      SOURCE_URL=${source_url_list_186[$JETSON_L4T]}
    ;;
    "t210ref" ) 
-     SOURCE_URL=${source_url_list_186[$JETSON_L4T]}
+     SOURCE_URL=${source_url_list_210[$JETSON_L4T]}
    ;;
    *)
     echo "Unrecognized board id: '$BOARD_ID'"
