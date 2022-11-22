@@ -3,7 +3,7 @@ Tools to build the Linux kernel and modules on board Jetson Developer Kits
 
 This tool is meant for intermediate+ users. Please read this entire document before proceeding.
 
-Supports L4T Releases 32.4.2 through 32.6.1
+Supports L4T Releases 32.4.2 through 32.7.2
 
 This repository contains convenience scripts to:
 * Download Kernel and Module sources (**B**oard **S**upport **P**ackage - **BSP**) 
@@ -84,6 +84,11 @@ The copyImage.sh script may be helpful depending on the Jetson model and L4T rel
 One thing that the scripts are useful for is building external kernel modules. People can build the modules on the device without having to go through the steps of setting up a development environment on the host, building the module, and transferring it to the Jetson. Instead, build the module on the Jetson and then install it.
 
 ## Release Notes
+
+### November, 2022
+* v1.1
+* Fixes issue with source file selection
+* Add support for 32.7.1 and 32.7.2
 
 ### September, 2021
 * v1.0
