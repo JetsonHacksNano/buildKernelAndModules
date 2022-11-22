@@ -89,6 +89,7 @@ One thing that the scripts are useful for is building external kernel modules. P
 * v1.1
 * Fixes issue with source file selection
 * Add support for 32.7.1 and 32.7.2
+* Thank you @SMSmith, @enetkilfatih, @kitazaki for contributing fixes
 
 ### September, 2021
 * v1.0
