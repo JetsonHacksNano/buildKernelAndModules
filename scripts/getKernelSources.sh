@@ -19,7 +19,7 @@ declare -A source_url_list_210=(
 # Table of the URLs to Kernel Sources for Jetson TX2, AGX Xavier, Xavier NX, AGX Orin
 # L4T Driver Package [BSP] Sources - Code 186
 declare -A source_url_list_186=( 
-  ["35.1.0"]="https://developer.nvidia.com/embedded/l4t/r35_release_v1.0/release/jetson_linux_r35.1.0_aarch64.tbz2"
+  ["35.1.0"]="https://developer.nvidia.com/embedded/l4t/r35_release_v1.0/sources/public_sources.tbz2"
   ["32.7.2"]="https://developer.nvidia.com/embedded/l4t/r32_release_v7.2/sources/t186/public_sources.tbz2"
   ["32.7.1"]="https://developer.nvidia.com/embedded/l4t/r32_release_v7.1/sources/t186/public_sources.tbz2"
   ["32.6.1"]="https://developer.nvidia.com/embedded/l4t/r32_release_v6.1/sources/t186/public_sources.tbz2"
