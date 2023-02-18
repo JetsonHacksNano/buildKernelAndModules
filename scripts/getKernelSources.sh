@@ -112,7 +112,7 @@ echo $MODULE_SYMVERS_URL
 cd "$SOURCE_TARGET"
 echo "$PWD"
 # L4T Driver Package (BSP) Sources
-wget -N "$SOURCE_URL"
+wget -O public_sources.tbz2 -N "$SOURCE_URL"
 
 # l4t-sources is a tbz2 file
 tar -xvf public_sources.tbz2  Linux_for_Tegra/source/public/kernel_src.tbz2 --strip-components=3
