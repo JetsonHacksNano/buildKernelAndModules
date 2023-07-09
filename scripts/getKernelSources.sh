@@ -6,6 +6,7 @@
 # Table of the URLs to Kernel Sources for Jetson Nano, Nano 2GB and TX1
 # L4T Driver Package [BSP] Sources - Code 210
 declare -A source_url_list_210=(
+  ["32.7.4"]="https://developer.nvidia.com/downloads/embedded/l4t/r32_release_v7.4/sources/t210/public_sources.tbz2"
   ["32.7.3"]="https://developer.nvidia.com/downloads/remack-sdksjetpack-463r32releasev73sourcest210publicsourcestbz2"
   ["32.7.2"]="https://developer.nvidia.com/embedded/l4t/r32_release_v7.2/sources/t210/public_sources.tbz2"
   ["32.7.1"]="https://developer.nvidia.com/embedded/l4t/r32_release_v7.1/sources/t210/public_sources.tbz2"
