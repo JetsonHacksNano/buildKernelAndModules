@@ -64,6 +64,8 @@ Over the years, we have been maintaining several different repositories here and
 * Jetson TX2
 * Jetson AGX Xavier
 * Jetson Xavier NX
+* Jetson Orin Nano
+* Jetson Orin NX
 
 The main difficulty of this approach is that there are several different repositories to maintain across NVIDIA L4T releases.
 
